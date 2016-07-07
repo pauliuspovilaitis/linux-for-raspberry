@@ -1,1 +1,33 @@
+###########################################################
+# Install squeezebox server on arm linux for raspberry pi #
+###########################################################
+
+# go to unix shell and run update
+sudo apt-get -y update && sudo apt-get -y dist-upgrade
+
+# install libraries
+apt-get install -y libsox-fmt-all libflac-dev libfaad2 libmad0
+
+# download the latest version of squeezebox server for debian
+wget -O logitechmediaserver_all.deb $(wget -q -O - "http://www.mysqueezebox.com/update/?version=7.9.0&revision=1&geturl=1&os=deb")
+
+# install it
+sudo dpkg -i logitechmediaserver_all.deb
+
+# fix permissions
+sudo chown -R squeezeboxserver:nogroup /usr/share/squeezeboxserver/squeezeboxserver
+
+# check if it is up and running
+service squeezeboxserver status
+
+# check if web interface is up and running by going to
+# raspberry ip can be found by running 'ifconfig' command
+http://yourraspberryip:9000
+
+# if you have an external hdd with media - mount it: 
+mkdir /media/USBHDD
+sudo mount -t ntfs-3g /dev/sda5 /media/USBHDD
+
+# add the new mounted device to squeezebox server using the interface, rescan the media and enjoy the music. 
+
 
