@@ -28,6 +28,6 @@ http://yourraspberryip:9000
 mkdir /media/USBHDD
 sudo mount -t ntfs-3g /dev/sda5 /media/USBHDD
 
-# add the new mounted device to squeezebox server using the interface, rescan the media and enjoy the music. 
+# add the new mounted device to squeezebox server using the interface, rescan media files.
 
 
