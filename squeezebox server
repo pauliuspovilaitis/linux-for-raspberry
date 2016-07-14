@@ -21,7 +21,7 @@ sudo chown -R squeezeboxserver:nogroup /usr/share/squeezeboxserver/squeezeboxser
 service squeezeboxserver status
 
 # check if web interface is up and running by going to
-# raspberry ip can be found by running 'ifconfig' command
+# ip can be found by running 'ifconfig' command
 http://yourraspberryip:9000
 
 # if you have an external hdd with media - mount it: 
